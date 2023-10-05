@@ -26,6 +26,19 @@ int	main(void)
 	if (key[1] != '0')
 		no();
 	fflush(stdin);
+
+	int i = -1;
+	while (key[++i])
+		printf("%c", key[i]);
+
+	/* char nb[4]; */
+
+	/* while (true) { */
+
+		
+
+	/* } */
+
 	return (0);
 }
 
