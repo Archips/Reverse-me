@@ -27,9 +27,7 @@ int	main(void)
 		no();
 	fflush(stdin);
 
-	int i = -1;
-	while (key[++i])
-		printf("%c", key[i]);
+	
 
 	/* char nb[4]; */
 
