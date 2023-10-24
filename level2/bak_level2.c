@@ -16,7 +16,7 @@ void ok()
 
 int	main(void)
 {
-	char key[1024]; //var_39
+	char key[1024];
 
 	printf("Please enter key: ");
 	if (1 != scanf("%s", key))
