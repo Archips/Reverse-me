@@ -1,122 +1,81 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void no()
-{
+void no(void) {
+
 	printf("Nope.\n");
-	exit(1);
 }
 
-void ok()
-{
+void ok(void) {
+
 	printf("Good job.\n");
-	exit(1);
 }
 
-int	main(void)
-{
-	char key[1024];
+int main(void) {
 
+	unsigned int	var1;
+	size_t			var2;
+	int				var3;
+	int				var4;
+	char			_3d;
+	char			_3c;
+	char			_3b;
+	/* unsigned int	_3a; */
+	char			tmp[3];
+	char			_39[24];
+	char			_21[9];
+	unsigned int	_18;
+	int				_14;
+	/* int				_10; */
+	unsigned int	_c;
+
+	_c = 0;
 	printf("Please enter key: ");
-	if (1 != scanf("%s", key))
+	_c = scanf("%23s", _39);
+	if (_c != 1)
 		no();
-	if (key[0] != '0')
+	if (_39[1] != '0')
 		no();
-	if (key[1] != '0')
+	if (_39[0] != '0')
 		no();
+	
 	fflush(stdin);
 
-	
+	memset(_21, 0, 9);
 
-	/* char nb[4]; */
+	_21[0] = 'd';
+	/* _3a = 0; */
+	_18 = 2;
+	_14 = 1;
 
-	/* while (true) { */
+	while (1) {
+		var2 = strlen(_21);
+		var1 = _18;
+		var4 = 0;
+		if (var2 < 8) {
 
-		
-
-	/* } */
-
+			var2 = strlen(_39);
+			var4 = var1 < var2;
+		}
+		if (!var4)
+			break;
+		_3d = _39[_18];
+		_3c = _39[_18 + 1];
+		_3b = _39[_18 + 2];
+		tmp[0] = _3d;
+		tmp[1] = _3c;
+		tmp[2] = _3b;
+		var3 = atoi(tmp);
+		_21[_14] = var3;
+		_18 = _18 + 3;
+		_14 = _14 + 1;
+	}
+	_21[_14] = '\0';
+	var3 = strcmp(_21, "delabere");
+	if (!var3)
+		ok();
+	else
+		no();
 	return (0);
 }
-
-
-/* int32_t no() __noreturn */
-/* { */
-/*     puts("Nope."); */
-/*     exit(1); */
-/*     /1* no return *1/ */
-/* } */
-
-/* int32_t ok() */
-/* { */
-/*     int32_t eax; */
-/*     int32_t var_c = eax; */
-/*     return puts("Good job."); */
-/* } */
-
-/* int32_t main(int32_t argc, char** argv, char** envp) */
-/* { */
-/*     int32_t var_c = 0; */
-/*     printf("Please enter key: "); */
-/*     char var_39; */
-/*     if (1 != __isoc99_scanf("%23s", &var_39)) */
-/*     { */
-/*         no(); */
-/*         /1* no return *1/ */
-/*     } */
-/*     char var_38; */
-/*     if (0x30 != var_38) */
-/*     { */
-/*         no(); */
-/*         /1* no return *1/ */
-/*     } */
-/*     if (0x30 != var_39) */
-/*     { */
-/*         no(); */
-/*         /1* no return *1/ */
-/*     } */
-/*     fflush(*stdin); */
-/*     char var_21; */
-/*     memset(&var_21, 0, 9); */
-/*     var_21 = 0x64; */
-/*     char var_3a = 0; */
-/*     int32_t var_18 = 2; */
-/*     int32_t var_14 = 1; */
-/*     while (true) */
-/*     { */
-/*         char var_45_1 = 0; */
-/*         int32_t eax_3; */
-/*         if (strlen(&var_21) < 8) */
-/*         { */
-/*             eax_3 = var_18 < strlen(&var_39); */
-/*             var_45_1 = eax_3; */
-/*         } */
-/*         eax_3 = var_45_1; */
-/*         if ((eax_3 & 1) == 0) */
-/*         { */
-/*             break; */
-/*         } */
-/*         int32_t eax_6; */
-/*         eax_6 = &var_39[var_18]; */
-/*         char nptr = eax_6; */
-/*         int32_t eax_7; */
-/*         eax_7 = &var_38[var_18]; */
-/*         char var_3c_1 = eax_7; */
-/*         void var_37; */
-/*         int32_t eax_8; */
-/*         eax_8 = *(&var_37 + var_18); */
-/*         char var_3b_1 = eax_8; */
-/*         &var_21[var_14] = atoi(&nptr); */
-/*         var_18 = (var_18 + 3); */
-/*         var_14 = (var_14 + 1); */
-/*     } */
-/*     &var_21[var_14] = 0; */
-/*     if (strcmp(&var_21, "delabere") != 0) */
-/*     { */
-/*         no(); */
-/*         /1* no return *1/ */
-/*     } */
-/*     ok(); */
-/*     return 0; */
-/* } */
