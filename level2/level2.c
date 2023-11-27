@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-void no(void) {
-
+void no()
+{
 	printf("Nope.\n");
 }
 
@@ -21,13 +21,11 @@ int main(void) {
 	char			_3d;
 	char			_3c;
 	char			_3b;
-	/* unsigned int	_3a; */
 	char			tmp[3];
 	char			_39[24];
 	char			_21[9];
 	unsigned int	_18;
 	int				_14;
-	/* int				_10; */
 	unsigned int	_c;
 
 	_c = 0;
@@ -45,7 +43,6 @@ int main(void) {
 	memset(_21, 0, 9);
 
 	_21[0] = 'd';
-	/* _3a = 0; */
 	_18 = 2;
 	_14 = 1;
 
