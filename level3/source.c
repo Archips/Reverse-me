@@ -15,68 +15,67 @@ void yes(void) {
 
 int main(void) {
 
-	unsigned long	var1;
-	int				var2;
-	size_t			var3;
-	int				var4; // bool
-	char			_4c;
-	char			_4b;
-	char			_4a;
-	/* int				_49; */
+	int				ascii_code;
+	size_t			len;
+	int				ret;
+	char			c1;
+	char			c2;
+	char			c3;
 	char			tmp[3];
-	char			_48[31];
-	char			_29[9];
-	unsigned long	_20;
-	int				_18;
-	int				_14;
-	int				_10;
-	/* int				_c; */
+	char			key[31];
+	char			password[9];
+	unsigned long	index_key;
+	int				index_pwd;
 
-	/* _c = 0; */
 	printf("Please enter key: ");
-	_10 = scanf("%s", _48);
-	if (_10 != 1)
+	if (scanf("%30s", key) != 1)
 		no();
-	if (_48[1] != '2')
-		no();
-	if (_48[0] != '4')
+	if (key[0] != '4' || key[1] != '2')
 		no();
 
 	fflush(stdin);
-	memset(_29, 0 , 9);
-	_29[0] = '*';
-	/* _49 = 0; */
-	_20 = 2;
-	_14 = 1;
+	
+	memset(password, 0 , 9);
+	
+	password[0] = '*';
+	index_key = 2;
+	index_pwd = 1;
 
 	while (1) {
 	
-		var3 = strlen(_29);
-		var1 = _20;
-		var4 = 0;
-		if (var3 < 8) {
+		len = strlen(password);
+		ret = 0;
+		
+		if (len < 8) {
 			
-			var3 = strlen(_48);
-			var4 = var1 < var3;
+			len = strlen(key);
+			ret = index_key < len;
 		}
-		if (!var4)
+		
+		if (!ret)
 			break;
-		_4c = _48[_20];
-		_4b = _48[_20 + 1];
-		_4a = _48[_20 + 2];
-		tmp[0] = _4c;
-		tmp[1] = _4b;
-		tmp[2] = _4a;
-		var2 = atoi(tmp);
-		_29[_14] = var2;
-		_20 = _20 + 3;
-		_14 = _14 + 1;
+		
+		c1 = key[index_key];
+		c2 = key[index_key + 1];
+		c3 = key[index_key + 2];
+		
+		tmp[0] = c1;
+		tmp[1] = c2;
+		tmp[2] = c3;
+		
+		ascii_code = atoi(tmp);
+		password[index_pwd] = ascii_code;
+	
+		index_key = index_key + 3;
+		index_pwd = index_pwd + 1;
 	}
-	_29[_14] = '\0';
-	_18 = strcmp(_29, "********");
-	if (_18 != 0)
-		no();
-	else
+	
+	password[index_pwd] = '\0';
+
+	if (!strcmp(password, "********"))
 		yes();
+	else
+		no();
+
 	return(0);
 }
